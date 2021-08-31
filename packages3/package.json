@@ -1,0 +1,17 @@
+{
+    "name": "@efos/packages3",
+    "private": true,
+    "scripts": {
+        "start": "webpack serve",
+        "build": "webpack --mode production",
+        "serve": "serve dist -p 3001",
+        "clean": "rm -rf dist"
+    },
+    "dependencies": {
+        "single-spa": "5.9.3",
+        "single-spa-vue": "2.4.1",
+        "vue": "3.1.4",
+        "@vue/compiler-sfc": "3.1.4",
+        "moment": "2.29.1"
+    }
+}
