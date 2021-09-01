@@ -15,7 +15,7 @@ const vueLifecycles = singleSpaVue({
         render() {
             return h(App, {
                 //@ts-ignore
-                reactProps:this.reactProps,
+                reactProps: this.reactProps,
                 // single-spa props are available on the "this" object. Forward them to your component as needed.
                 // https://single-spa.js.org/docs/building-applications#lifecyle-props
             })
@@ -27,3 +27,4 @@ const vueLifecycles = singleSpaVue({
 // export const mount = vueLifecycles.mount
 // export const unmount = vueLifecycles.unmount
 export const remote = vueLifecycles
+export default vueLifecycles

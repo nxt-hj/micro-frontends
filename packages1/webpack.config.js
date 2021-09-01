@@ -2,6 +2,7 @@ const path = require('path')
 const CopyPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const ExternalMemotesPlugin = require('external-remotes-plugin')
 const ModuleFederationPlugin = require('webpack').container.ModuleFederationPlugin
 module.exports = {
     entry: './src/index',
@@ -21,6 +22,9 @@ module.exports = {
         port: 3000,
         historyApiFallback: true,
         hot: true,
+        // client: {
+        //     progress: true,
+        // },
         headers: {
             'Access-Control-Allow-Origin': '*',
             'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, PATCH, OPTIONS',
@@ -60,6 +64,10 @@ module.exports = {
         }),
         new ModuleFederationPlugin({
             name: 'packages1',
+            // remotes: {
+            //     packages2: 'packages2@[packages2RemoteUrl]/remoteEntry.js',
+            //     packages3: 'packages3@[packages3RemoteUrl]/remoteEntry.js',
+            // },
             shared: {
                 react: {
                     import: 'react', // the "react" package will be used a provided and fallback module
@@ -75,6 +83,6 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: './public/index.html',
         }),
-        // new HotModuleReplacementPlugin(),
+        new ExternalMemotesPlugin(),
     ],
 }

@@ -1,30 +1,29 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import useRemoteModule from './useRemoteModule'
+import UseRemoteModule from './useRemoteModule'
+
 function App() {
-    const RemoteModule: JSX.Element = useRemoteModule({
-        url: 'http://localhost:30001/remoteEntry.js',
-        scope: 'packages2',
-        module: 'widget',
-    })
-    const RemoteModule2: JSX.Element = useRemoteModule({
-        url: 'http://localhost:30001/remoteEntry.js',
-        scope: 'packages2',
-        module: 'widget1',
-    })
-    const RemoteModule3: JSX.Element = useRemoteModule({
-        url: 'http://localhost:30002/remoteEntry.js',
-        scope: 'packages3',
-        module: 'widget',
-    })
+    const [num, setTimer] = React.useState(0)
+    React.useEffect(() => {
+        let fnum = num
+        let timer = setInterval(() => {
+            setTimer(fnum++)
+        }, 3e3)
+        return () => {
+            clearInterval(timer)
+        }
+    }, [])
     return (
         <div style={{ color: 'rgb(53 160 80)' }}>
-            ________________________
-            {RemoteModule}
+            <UseRemoteModule scope='packages2' module='widget' reactProps={`timer `} />
             ______________
-            {RemoteModule2}
-            ______________
-            {RemoteModule3}
+            <UseRemoteModule scope='packages2' module='widget1' reactProps={`timer`} />
+            _______________
+            <UseRemoteModule
+                scope='packages3'
+                module='widget'
+                reactProps={`haha , Mrs VUE this information is come from react ${num}`}
+            />
         </div>
     )
 }

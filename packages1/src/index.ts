@@ -1,4 +1,7 @@
 // import { registerApplication, start } from 'single-spa'
+
+// window.packages2RemoteUrl="http://localhost:3001"
+// window.packages3RemoteUrl="http://localhost:3002"
 import('./App')
 
 declare var singleSpa: any

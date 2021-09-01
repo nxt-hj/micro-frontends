@@ -1,5 +1,5 @@
 {
-    "name": "root",
+    "name": "efos",
     "private": true,
     "scripts": {
         "start": "lerna run --scope @efos/* --parallel start",
@@ -23,7 +23,8 @@
         "vue-loader": "16.3.0",
         "webpack": "5.41.1",
         "webpack-cli": "4.7.2",
-        "webpack-dev-server": "4.0.0-beta.3"
+        "webpack-dev-server": "4.0.0-beta.3",
+        "external-remotes-plugin": "^1.0.0"
     },
     "dependencies": {
         "@efos/packages1": "file:packages1",

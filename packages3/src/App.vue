@@ -1,7 +1,7 @@
 <template>
     <div>
         <h3>this is vue app</h3>
-        这是传参{{ reactProps }}____{{ now }}
+        {{ reactProps }}____{{ now }}
         <Content />
         <Button />
     </div>
