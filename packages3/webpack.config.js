@@ -58,6 +58,7 @@ module.exports = {
         new CopyPlugin({
             patterns: [{ from: '../node_modules/single-spa/lib/umd/single-spa.min.js', to: 'single-spa.min.js' }],
         }),
+        new webpack.ContextReplacementPlugin(/moment[/\\]locale$/, /zh-cn/),
         new ModuleFederationPlugin({
             name: 'packages3',
             library: { type: 'var', name: 'packages3' },

@@ -1,4 +1,5 @@
 const path = require('path')
+const webpack = require('webpack')
 const CopyPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
@@ -59,6 +60,7 @@ module.exports = {
         new CopyPlugin({
             patterns: [{ from: '../node_modules/single-spa/lib/umd/single-spa.min.js', to: 'single-spa.min.js' }],
         }),
+        new webpack.ContextReplacementPlugin(/moment[/\\]locale$/, /zh-cn/),
         new ModuleFederationPlugin({
             name: 'packages2',
             library: { type: 'var', name: 'packages2' },
