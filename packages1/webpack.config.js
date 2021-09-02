@@ -33,6 +33,9 @@ module.exports = {
     },
     resolve: {
         extensions: ['.ts', '.tsx', '.js', 'jsx'],
+        alias: {
+            hook: path.resolve(__dirname, `src/hook/`),
+        },
     },
     module: {
         rules: [

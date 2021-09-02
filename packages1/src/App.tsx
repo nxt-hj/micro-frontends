@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import UseRemoteModule from './hook/useRemoteModule'
+import UseRemoteModule from 'hook/useRemoteModule'
 
 function App() {
     const [num, setTimer] = React.useState(0)
