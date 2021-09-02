@@ -1,6 +1,6 @@
 # 介绍
 
-- `packages1`为宿主应用，
+- `packages1（React）`为宿主应用，
 - `packages2（React）`与`packages3（Vue）`为独立子应用，他们暴露组件
 # 开始
 
