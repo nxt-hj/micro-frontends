@@ -1,3 +1,7 @@
+
+/**@keep 
+ * 这是远程引用模块方法的注释
+ */
 import React from 'react'
 import Parcel from 'single-spa-react/parcel'
 
