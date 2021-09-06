@@ -35,7 +35,7 @@ module.exports = function (env, argv) {
             },
         },
         resolve: {
-            extensions: ['.ts', '.tsx', '.js', 'jsx'],
+            extensions: ['.js', '.jsx', '.ts', '.tsx', '.scss', '.json', '.jpg', '.png', '.gif'],
             alias: {
                 hook: path.resolve(__dirname, `src/hook/`),
             },
@@ -66,7 +66,7 @@ module.exports = function (env, argv) {
         plugins: [
             new CleanWebpackPlugin(),
             new CopyPlugin({
-                patterns: [{ cache: true, from: '../node_modules/single-spa/lib/umd/single-spa.min.js', to: 'single-spa.min.js' }],
+                patterns: [{ transform: { cache: true }, from: '../node_modules/single-spa/lib/umd/single-spa.min.js', to: 'single-spa.min.js' }],
             }),
             new ModuleFederationPlugin({
                 name: 'packages1',

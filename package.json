@@ -4,6 +4,7 @@
     "scripts": {
         "start": "lerna run --scope @efos/* --parallel start",
         "build": "lerna run --scope @efos/* --parallel build",
+        "analyze": "lerna run --scope @efos/host --parallel analyze",
         "publish": "node publish.js"
     },
     "devDependencies": {
@@ -26,7 +27,8 @@
         "vue-loader": "16.3.0",
         "webpack": "5.41.1",
         "webpack-cli": "4.7.2",
-        "webpack-dev-server": "4.0.0-beta.3"
+        "webpack-dev-server": "4.0.0-beta.3",
+        "webpack-bundle-analyzer": "^4.4.2"
     },
     "dependencies": {
         "@efos/packages1": "file:packages1",

@@ -1,7 +1,7 @@
 # 介绍
 
 - `packages1（React）`为宿主应用，
-- `packages2（React）`与`packages3（Vue）`为独立子应用，他们暴露组件
+- `packages2（React）`与`packages3（Vue）`为独立子应用，暴露组件
 # 开始
 
 cd到根目录`npm i&&npm start`

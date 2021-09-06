@@ -32,7 +32,7 @@ module.exports = function (env, argv) {
             },
         },
         resolve: {
-            extensions: ['.vue', '.ts', '.js', '.tsx'],
+            extensions: ['.vue', '.ts', '.js', '.tsx', '.scss', '.json', '.jpg', '.png', '.gif'],
         },
         module: {
             rules: [
